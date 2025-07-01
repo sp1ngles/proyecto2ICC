@@ -258,8 +258,6 @@ resultado_m1, vecinos = clasificar_metodo1(imagen_prueba, X_train, y_train)
 resultado_m2 = clasificar_metodo2(imagen_prueba, promedios)
 
 print(f"\nResultados de la clasificación:")
-print(f"Método 1 (Vecinos cercanos): El dígito es {resultado_m1}")
-print(f"  - Los 3 vecinos más cercanos fueron: {vecinos}")
-print(f"Método 2 (Distancia a promedios): El dígito es {resultado_m2}")
-
-print("\n¡Proyecto completado!")
+print(f"soy la inteligencia artificial 1 y los vecinos mas cercanos son {resultado_m1}")
+print(f"  soy la inteligencia artificial 1 y detecte que los 3 vecinos mas cercanos fueron: {vecinos}")
+print(f"soy la inteligencia artificial 2 y detecte que la distancia promedio fue: {resultado_m2}")
