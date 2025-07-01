@@ -233,13 +233,13 @@ print("\n" + "=" * 50)
 print("PRUEBA CON UNA IMAGEN")
 print("=" * 50)
 print("Opciones:")
-print("1. Usar imagen externa ('image-test.jpeg')")
+print("1. Usar imagen externa ('micinco.jpeg')")
 print("2. Usar una imagen del conjunto de prueba")
 
 opcion = input("Elige una opción (1 o 2): ").strip()
 
 if opcion == "1":
-    imagen_prueba = leer_imagen_externa("image-test.jpeg")
+    imagen_prueba = leer_imagen_externa("micinco.jpeg")
     if imagen_prueba is not None:
         print("Imagen externa cargada exitosamente")
         mostrar_imagen(imagen_prueba, "Imagen cargada desde archivo")
