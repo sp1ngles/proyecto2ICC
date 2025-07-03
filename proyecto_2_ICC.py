@@ -1,5 +1,6 @@
 # Proyecto: Clasificador de Dígitos Escritos a Mano
 # Curso: Introducción a la Ciencia de la Computación
+import csv
 
 import cv2
 import numpy as np
@@ -43,6 +44,30 @@ for digito in range(10):  # Del 0 al 9
 
 promedios = np.array(promedios)
 print("¡Promedios calculados!")
+
+
+def exportar_promedios_csv(promedios):
+    """Exporta los promedios a archivos CSV separados, uno por cada dígito"""
+    for digito in range(10):
+        nombre_archivo = f'promedio_digito_{digito}.csv'
+
+        with open(nombre_archivo, 'w', newline='') as archivo_csv:
+            writer = csv.writer(archivo_csv)
+
+            # Escribir encabezado con las columnas
+            writer.writerow([''] + [f'Col{i + 1}' for i in range(8)])
+
+            # Escribir cada fila de la matriz
+            matriz = promedios[digito]
+            for fila in range(8):
+                # Convertir los valores a strings con 2 decimales
+                valores_fila = [f"{matriz[fila][col]:.2f}" for col in range(8)]
+                writer.writerow([f'Fila{fila + 1}'] + valores_fila)
+
+        print(f"Archivo '{nombre_archivo}' generado exitosamente.")
+
+
+exportar_promedios_csv(promedios)
 
 
 # ============================================================================
@@ -236,9 +261,10 @@ print("Opciones:")
 print("1. Usar imagen externa ('micinco.jpeg')")
 print("2. Usar una imagen del conjunto de prueba")
 
-opcion = int(input("Elige una opción (1 o 2): "))
+opcion = int(input("Elige una opcion (1 o 2): "))
 while opcion<1 or opcion>2:
-    opcion = int(input("Elige una opción (1 o 2): "))
+    opcion = int(input("Elige una opcion (1 o 2): "))
+
 if opcion == 1:
     imagen_prueba = leer_imagen_externa("micinco.jpeg")
     if imagen_prueba is not None:
