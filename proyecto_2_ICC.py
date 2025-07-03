@@ -4,8 +4,6 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-# LÍNEA MÁGICA PARA ARREGLAR EL ERROR:
-plt.switch_backend('TkAgg')
 from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split
 
