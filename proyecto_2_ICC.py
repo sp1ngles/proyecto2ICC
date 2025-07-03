@@ -236,9 +236,9 @@ print("Opciones:")
 print("1. Usar imagen externa ('micinco.jpeg')")
 print("2. Usar una imagen del conjunto de prueba")
 
-opcion = int(input("Elige una opción (1 o 2): ").strip())
+opcion = int(input("Elige una opción (1 o 2): "))
 while opcion<1 or opcion>2:
-    opcion = int(input("Elige una opción (1 o 2): ").strip())
+    opcion = int(input("Elige una opción (1 o 2): "))
 if opcion == 1:
     imagen_prueba = leer_imagen_externa("micinco.jpeg")
     if imagen_prueba is not None:
